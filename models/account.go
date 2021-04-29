@@ -1,6 +1,17 @@
 package models
 
+import (
+	validation "github.com/go-ozzo/ozzo-validation/v4"
+)
+
 type Account struct {
-	Email string `json:"email" validate:"required"`
-	Name  string `json:"name" validate:"required"`
+	Email string `json:"email"`
+	Name  string `json:"name"`
+}
+
+func (a Account) Validate() error {
+	return validation.ValidateStruct(&a,
+		validation.Field(&a.Email, validation.Required),
+		validation.Field(&a.Name, validation.Required),
+	)
 }
