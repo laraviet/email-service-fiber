@@ -11,6 +11,9 @@ import (
 	"github.com/sendgrid/sendgrid-go/helpers/mail"
 )
 
+//@TODO: write func to send dynamic template email
+//@TODO: write func to separate send simple email and template email base on email object
+
 func SendEmailViaSendGrid(email models.Email) {
 	if err := godotenv.Load(); err != nil {
 		log.Fatal("Error loading .env file")
@@ -26,6 +29,7 @@ func SendEmailViaSendGrid(email models.Email) {
 		htmlContent = email.Content.Value
 	}
 	message := mail.NewSingleEmail(from, subject, to, plainTextContent, htmlContent)
+
 	client := sendgrid.NewSendClient(os.Getenv("SENDGRID_API_KEY"))
 	response, err := client.Send(message)
 	if err != nil {
