@@ -12,6 +12,5 @@ type Account struct {
 func (a Account) Validate() error {
 	return validation.ValidateStruct(&a,
 		validation.Field(&a.Email, validation.Required),
-		validation.Field(&a.Name, validation.Required),
 	)
 }
