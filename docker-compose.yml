@@ -11,6 +11,8 @@ services:
     build:
       context: . # Use an image built from the specified dockerfile in the current directory.
       dockerfile: Dockerfile
+    volumes:
+      - .:/app
     ports:
       - "8010:8010" # Forward the exposed port 8080 on the container to port 8080 on the host machine
     restart: unless-stopped
