@@ -5,11 +5,12 @@ import (
 )
 
 type Email struct {
-	Subject    string  `json:"subject"`
-	From       Account `json:"from"`
-	To         Account `json:"to"`
-	Content    Content `json:"content"`
-	TemplateId string  `json:"template_id"`
+	Subject             string      `json:"subject"`
+	From                Account     `json:"from"`
+	To                  Account     `json:"to"`
+	Content             Content     `json:"content"`
+	TemplateId          string      `json:"template_id"`
+	DynamicTemplateData map[string]string `json:"dynamic_template_data"`
 }
 
 func (e Email) Validate() error {
