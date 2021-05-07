@@ -11,7 +11,7 @@ require (
 	github.com/joho/godotenv v1.3.0
 	github.com/klauspost/compress v1.12.1 // indirect
 	github.com/leodido/go-urn v1.2.1 // indirect
-	github.com/sendgrid/rest v2.6.3+incompatible // indirect
+	github.com/sendgrid/rest v2.6.3+incompatible
 	github.com/sendgrid/sendgrid-go v3.9.0+incompatible
 	github.com/valyala/tcplisten v1.0.0 // indirect
 	golang.org/x/net v0.0.0-20210428140749-89ef3d95e781 // indirect

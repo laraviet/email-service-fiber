@@ -31,3 +31,8 @@ Body
 Note:
 - You can update `SENDGRID_API_KEY` in `.env` to use your own sendgrid_api_key
 - Header.Authorization is the basic authen for `USER_BASIC_AUTH`, `PASSWORD_BASIC_AUTH` in `.env`
+
+# UnitTest
+- `cp .env.example tests/.env.testing`
+- Update `tests/.env.testing` according to your test environment
+- `go test -v ./tests`

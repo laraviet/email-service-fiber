@@ -4,7 +4,6 @@ import (
 	"log"
 	"os"
 
-	"github.com/joho/godotenv"
 	"github.com/laraviet/email-service-fiber/models"
 	"github.com/sendgrid/rest"
 	"github.com/sendgrid/sendgrid-go"
@@ -63,10 +62,6 @@ func sendSimpleEmail(email models.Email) {
 }
 
 func SendEmailViaSendGrid(email models.Email) {
-	if err := godotenv.Load(); err != nil {
-		log.Fatal("Error loading .env file")
-	}
-
 	if len(email.TemplateId) > 0 {
 		sendDynamicTemplate(email)
 	} else {
