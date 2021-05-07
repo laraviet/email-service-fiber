@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
+	"os"
 	"strings"
 	"testing"
 
@@ -20,7 +21,7 @@ func ApiRoute(method string, body io.Reader) *http.Request {
 }
 
 func AddBasicAuth(req *http.Request) {
-	req.Header.Set("Authorization", "Basic bGl2M2x5Okg4VjZzVGhk")
+	req.SetBasicAuth(os.Getenv("USER_BASIC_AUTH"), os.Getenv("PASSWORD_BASIC_AUTH"))
 }
 
 func Test_Email_Send_Enpoint(t *testing.T) {
