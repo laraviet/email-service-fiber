@@ -5,7 +5,7 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/basicauth"
-	"github.com/laraviet/email-service-fiber/controllers/emailController"
+	"github.com/laraviet/email-service-fiber/handlers"
 )
 
 func SetRoutes() *fiber.App {
@@ -17,7 +17,7 @@ func SetRoutes() *fiber.App {
 		},
 	}))
 
-	route.Post("email/send", emailController.Index)
+	route.Post("email/send", handlers.Index)
 
 	return route
 }
